@@ -351,7 +351,7 @@ class ParseResults(object):
 
     def __getattr__( self, name ):
         if name not in self.__slots__:
-            if self.__tokdict.has_key( name ):
+            if name in self.__tokdict:
                 if name not in self.__accumNames:
                     return self.__tokdict[name][-1][0]
                 else:
